@@ -701,10 +701,11 @@ INJECT Identifier :
         String cachedImage = getCachedImage();
         if (cachedImage != null) return cachedImage;
         String image = getSource();
-        if (image.equals("jjtThis") || image.equals("CURRENT_NODE")) { 
-            image = getGrammar().getTemplateGlobals().getCurrentNodeVariableName();
-        }
-        else if (image.equals("PARSER_CLASS")) {
+//        if (image.equals("jjtThis") || image.equals("CURRENT_NODE")) { 
+//            image = getGrammar().getTemplateGlobals().getCurrentNodeVariableName();
+//        }
+//        else 
+        if (image.equals("PARSER_CLASS")) {
             image = getAppSettings().getParserClassName();
         }
         else if (image.equals("LEXER_CLASS")) {

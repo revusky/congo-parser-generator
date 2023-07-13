@@ -207,8 +207,9 @@
    [#if isProduction]
       [#set nodeVarName = "thisProduction"] [#-- [JB] maybe should be "CURRENT_PRODUCTION" or "THIS_PRODUCTION" to match "CURRENT_NODE"? --]
    [#else]
-      [#set nodeNumbering = nodeNumbering +1]
-      [#set nodeVarName = currentProduction.name + nodeNumbering] 
+      [#set nodeVarName = "CURRENT_NODE"]
+      [#--set nodeNumbering = nodeNumbering +1]
+      [#set nodeVarName = currentProduction.name + nodeNumbering--] 
    [/#if]
    [#return nodeVarName/]
 [/#function]
@@ -235,7 +236,7 @@
     [#if settings.nodeUsesParser]
      ${nodeVarName}.setParser(this);
     [/#if]
-        openNodeScope(${nodeVarName});
+       openNodeScope(${nodeVarName});
    }
 [/#macro]
 
